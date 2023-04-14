@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/screens/home_screen.dart';
+import 'package:flutterapp/screens/verification.dart';
 
 import '../reusable_widgets/reusable_widgets.dart';
 import '../utils/color_utils.dart';
@@ -40,6 +41,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 padding: EdgeInsets.fromLTRB(20, 120, 20, 0),
                 child: Column(
                   children: <Widget>[
+                    Text(
+                      'Enter New Registration',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+
                     const SizedBox(
                       height: 20,
                     ),
@@ -49,17 +60,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       height: 20,
                     ),
                     reusableTextField("Password", Icons.person_outline, false,
-                        _emailTextController),
+                        _passwordTextController),
+
                     const SizedBox(
                       height: 20,
                     ),
                     reusableTextField("Password Confirmation", Icons.lock_outlined, true,
                         _passwordTextController),
                     const SizedBox(
-                      height: 20,
+                      height: 210,
                     ),
                     firebaseUIButton(context, "I'll send you a confirmation code", () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>MyVerify()));
 
                     })
                   ],
