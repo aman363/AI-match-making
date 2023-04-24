@@ -1,10 +1,14 @@
-//import 'package:firebase_core/firebase_core.dart';
-import 'package:flutterapp/screens/signin_screen.dart';
+import 'package:ai_match_making_app/screens/Base/home_screen.dart';
+import 'package:ai_match_making_app/screens/auth/main_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
+// import 'firebase_options.dart';?
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  //await Firebase.initializeApp();
+  await Firebase.initializeApp( options: const FirebaseOptions( apiKey: "AIzaSyAAbT7oeiCl3h5wXnKJqpr83yirMPkh2Jo",
+    appId: "1:804852018140:android:556efd5f13e71b779d7d19",
+    messagingSenderId: "804852018140",
+    projectId: "ai-match-making-app", ), );
   runApp(const MyApp());
 }
 
@@ -15,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'AI Match Making',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -28,7 +32,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const SignInScreen(),
+      home: const MainScreen(),
     );
   }
 }

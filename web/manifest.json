@@ -1,6 +1,6 @@
 {
-    "name": "flutterapp",
-    "short_name": "flutterapp",
+    "name": "ai_match_making_app",
+    "short_name": "ai_match_making_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

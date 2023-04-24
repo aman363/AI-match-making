@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutterapp">
+    package="willings.inc.ai_match_make.ai_match_making_app">
    <application
-        android:label="flutterapp"
+        android:label="ai_match_making_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

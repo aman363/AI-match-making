@@ -1,4 +1,4 @@
-# flutterapp
+# ai_match_making_app
 
 A new Flutter project.
 

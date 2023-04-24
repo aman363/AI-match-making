@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "804852018140",
+    "project_id": "ai-match-making-app",
+    "storage_bucket": "ai-match-making-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804852018140:android:556efd5f13e71b779d7d19",
+        "android_client_info": {
+          "package_name": "willings.inc.ai_match_make"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "804852018140-i0pig5qasd4pag81f8nklla2hf2nq9sa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAbT7oeiCl3h5wXnKJqpr83yirMPkh2Jo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "804852018140-i0pig5qasd4pag81f8nklla2hf2nq9sa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
