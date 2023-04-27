@@ -1,4 +1,5 @@
 import 'package:ai_match_making_app/screens/Base/home_screen.dart';
+import 'package:ai_match_making_app/screens/Base/my_page.dart';
 import 'package:ai_match_making_app/screens/auth/main_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MainScreen(),
+      home: const MyPage(),
     );
   }
 }

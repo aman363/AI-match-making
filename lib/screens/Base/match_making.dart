@@ -1,3 +1,4 @@
+import 'package:ai_match_making_app/screens/Base/home_screen.dart';
 import 'package:ai_match_making_app/screens/Base/my_page.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class _Match_makingState extends State<Match_making> {
         title:
         firebaseUIButton(context,"Schedule of Matches",(){
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const MyPage()));
+              MaterialPageRoute(builder: (context) => const HomeScreen()));
         })
 
 
