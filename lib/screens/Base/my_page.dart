@@ -18,12 +18,16 @@ class _MyPageState extends State<MyPage> {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
-          child: const Text("Logout"),
+          child: const Text("GetData"),
           onPressed: () {
+            // for logout the below code works...
+
             // FirebaseAuth.instance.signOut().then((value) {
             //   Navigator.push(context,
             //       MaterialPageRoute(builder: (context) => const SignInScreen()));
             // });
+
+
             User? us=FirebaseAuth.instance.currentUser;
             print("UID of person:");
             print(us?.uid);
@@ -46,6 +50,15 @@ class _MyPageState extends State<MyPage> {
               'size': 12,
             });
 
+            FirebaseFirestore.instance.collection("Teams").where('team name', isEqualTo: "Team 1").get().then(
+                  (querySnapshot) {
+                print("IDs for the following query:");
+                for (var docSnapshot in querySnapshot.docs) {
+                  print(docSnapshot.id);
+                }
+              },
+              onError: (e) => print("Error completing: $e"),
+            );
 
 
           },
