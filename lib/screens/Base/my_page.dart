@@ -18,7 +18,7 @@ class _MyPageState extends State<MyPage> {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
-          child: const Text("GetData"),
+          child: const Text("Linking to Further Pages and Getting Data"),
           onPressed: () {
             // for logout the below code works...
 

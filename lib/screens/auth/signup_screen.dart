@@ -18,6 +18,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _passwordTextController = TextEditingController();
   final TextEditingController _emailTextController = TextEditingController();
   final TextEditingController _psdTextController = TextEditingController();
+  String sr="";
+
+  Future valid()async{
+    if(_psdTextController.text!=_passwordTextController.text){
+      setState(() {
+        sr='*passwords do not match';
+      });
+
+      // print(sr);
+    }else if (_passwordTextController.text.length<6){
+      setState(() {
+        sr='*password should be greater than 6 characters';
+      });
+    }
+    else{
+      setState(() {
+        sr='';
+      });
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,23 +83,48 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     reusableTextField("Confirm Password", Icons.lock_outlined, true,
                         _psdTextController),
-                    const SizedBox(
-                      height: 20,
-                    ),
+
+                    SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                          sr,
+                          textAlign: TextAlign.left,
+                          style: const TextStyle(
+                            fontFamily: 'Arial',
+                            // fontSize: 18,
+                            color: Colors.red,
+                            fontWeight: FontWeight.bold,
+                            height: 2,
+                            // textAlign:
+                          ),
+
+                        ),
+                      ),
+
+
+
                     firebaseUIButton(context, "Sign Up", () {
+                      valid();
                       if(_passwordTextController.text.length<6) {
-                        const snackBar = SnackBar(
-                          content: Text(
-                              'Password should be greater than 6 characters'),
-                        );
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                       setState(() {
+                         sr="*password should be greater than 6 characters";
+                       });
+
+                        // const snackBar = SnackBar(
+                        //   content: Text(
+                        //       'Password should be greater than 6 characters'),
+                        // );
+                        // ScaffoldMessenger.of(context).showSnackBar(snackBar);
                       }
                       else if(_psdTextController.text!=_passwordTextController.text) {
-                        const snackBar = SnackBar(
-                          content: Text(
-                              'Passwords do not match'),
-                        );
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+
+                        // const snackBar = SnackBar(
+                        //   content: Text(
+                        //       'Passwords do not match'),
+                        // );
+                        // ScaffoldMessenger.of(context).showSnackBar(snackBar);
                       }
                       else {
 

@@ -21,18 +21,32 @@ class _Match_makingState extends State<Match_making> {
         elevation: 0,
         title:
         firebaseUIButton(context,"Schedule of Matches",(){
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const HomeScreen()));
+          // Navigator.push(context,
+          //     MaterialPageRoute(builder: (context) => const HomeScreen()));
         })
 
 
     // )
       ),
-      body: const CustomLogoWidget(
-        imagePath: "assets/images/matchmaking.png",
-        text: "This is where you can see your potential opponent",
-      ),
+      body:
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const CustomLogoWidget(
+            imagePath: "assets/images/matchmaking.png",
+            text: "This is where you can see your potential opponent",
+          ),
+          Container(
+            width: 300,
+          child: Column(
 
+            children: [firebaseUIButton(context, "Change Matching Conditions", () {}),
+            ]
+          ),
+          ),
+        ],
+      ),
     );
   }
 }
